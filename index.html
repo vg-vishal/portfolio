@@ -6,156 +6,153 @@
     <title>Vishal Gedela | ECE Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Animate On Scroll (AOS) CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Interactive Particle Background -->
+    <div id="particles-js"></div>
+
     <nav data-aos="fade-down" data-aos-duration="1000">
-        <div class="logo">VG.</div>
+        <div class="logo">VG_SYS_ON</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#resume-sec">Resume</a></li>
         </ul>
     </nav>
 
     <header id="home">
         <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
             <h1>Vishal Gedela</h1>
-            <h2 class="typewriter">ECE Student | VLSI | Embedded Systems | AI/ML</h2>
-            <p>B.Tech ECE (2024–2028) @ SRM Institute of Science and Technology | 9.25 CGPA</p>
+            <h2 class="typewriter">> B.Tech ECE @ SRMIST | VLSI | AI/ML</h2>
+            <p>Bridging Core Hardware with Intelligent Systems.</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="resume.pdf" class="btn secondary" target="_blank">Download Resume</a>
+                <a href="#projects" class="btn primary">Initialize Projects</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
     <section id="about" class="container">
-        <h2 class="section-title" data-aos="fade-right">About Me</h2>
-        <div data-aos="fade-up" data-aos-delay="200">
-            <p>I am an Electronics and Communication Engineering student at SRM Institute of Science and Technology (Class of 2028) maintaining a 9.25 CGPA. My passion lies at the intersection of hardware and intelligent systems, with a core focus on VLSI, Embedded Systems, and Artificial Intelligence.</p>
-            <br>
-            <p>I thrive on building end-to-end solutions that bridge the physical and digital worlds. Whether I am optimizing RF impedance matching networks using evolutionary algorithms or developing real-time AI gesture recognition systems, I approach engineering with a strict focus on performance, efficiency, and real-world applicability.</p>
-        </div>
-    </section>
-
-    <section id="experience" class="container">
-        <h2 class="section-title" data-aos="fade-right">Work Experience</h2>
-        <div class="card glass" data-aos="fade-up" data-aos-delay="200">
-            <h3>AI Intern</h3>
-            <p class="highlight-text">Waveva Technologies | Jun 2026 – Aug 2026 | Remote</p>
-            <ul>
-                <li>Engineered data pipelines by performing cleaning, preprocessing, and exploratory data analysis (EDA) on real-world Kaggle datasets.</li>
-                <li>Leveraged Python, Pandas, NumPy, and Matplotlib for advanced data manipulation and visualization.</li>
-                <li>Optimized datasets for machine learning models by resolving data inconsistencies and selecting critical features.</li>
-                <li>Completed over 30 hours of intensive training focused on Artificial Intelligence and Machine Learning applications.</li>
-            </ul>
+        <h2 class="section-title" data-aos="fade-right">System Info [About]</h2>
+        <div class="terminal-box" data-aos="fade-up">
+            <p>> <strong>STATUS:</strong> B.Tech ECE (Class of 2028) | CGPA: 9.25</p>
+            <p>> <strong>LOG:</strong> I build end-to-end solutions that bridge the physical and digital worlds. From FPGA RTL design to optimizing RF impedance matching and real-time AI gesture recognition, my focus is strictly on performance, efficiency, and real-world applicability.</p>
+            <p>> <strong>LATEST UPDATE:</strong> AI Intern @ Waveva Technologies (Engineered ML data pipelines).</p>
         </div>
     </section>
 
     <section id="skills" class="container">
-        <h2 class="section-title" data-aos="fade-right">Technical Skills</h2>
+        <h2 class="section-title" data-aos="fade-right">Tech Arsenal</h2>
         <div class="grid-3">
-            <div class="card glass" data-aos="flip-left" data-aos-delay="100">
-                <h3>Digital & VLSI</h3>
-                <p>Digital Logic Design, RTL Design, FPGA</p>
+            <div class="card neon-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-microchip"></i> Digital & VLSI</h3>
+                <p>Digital Logic, RTL Design, FPGA</p>
             </div>
-            <div class="card glass" data-aos="flip-left" data-aos-delay="200">
-                <h3>Programming</h3>
+            <div class="card neon-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-code"></i> Languages</h3>
                 <p>C, Python, MATLAB, Verilog, VHDL</p>
             </div>
-            <div class="card glass" data-aos="flip-left" data-aos-delay="300">
-                <h3>Hardware & Tools</h3>
-                <p>Xilinx Vivado, Arduino IDE, Multisim, LTspice, MATLAB, GitHub, VS Code</p>
-            </div>
-            <div class="card glass" data-aos="flip-left" data-aos-delay="400">
-                <h3>AI, ML & Frameworks</h3>
-                <p>NumPy, Scikit-learn, Pandas, Matplotlib, KNN Algorithm</p>
+            <div class="card neon-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-brain"></i> AI & ML</h3>
+                <p>NumPy, Scikit-learn, Pandas, KNN Algorithm</p>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
+        <h2 class="section-title" data-aos="fade-right">Deployed Projects</h2>
         <div class="grid-2">
-            <div class="card glass" data-aos="fade-up" data-aos-delay="100">
-                <h3>AI-Based Hand Gesture Recognition</h3>
-                <p>Built a real-time gesture classification system utilizing IMU sensors (MPU6050) and the K-Nearest Neighbors (KNN) algorithm. Managed end-to-end data collection, preprocessing, and model training specifically for human-computer interaction applications.</p>
+            <div class="card neon-card" data-aos="fade-up">
+                <h3>AI Hand Gesture Recognition</h3>
+                <p>Real-time gesture classification using IMU sensors (MPU6050) and KNN algorithm. <em>(Published Patent Application)</em></p>
+                <a href="https://github.com/vg-vishal" target="_blank" class="btn small-btn"><i class="fab fa-github"></i> View Repo</a>
             </div>
-            <div class="card glass" data-aos="fade-up" data-aos-delay="200">
-                <h3>GA-Optimized RF Impedance Matching</h3>
-                <p>Simulated and analyzed RF coil behavior under complex biological loading conditions using MATLAB. Applied Genetic Algorithms to optimize T-network parameters, successfully reducing reflection losses and improving power transfer efficiency.</p>
+            <div class="card neon-card" data-aos="fade-up">
+                <h3>GA-Optimized RF Matching</h3>
+                <p>Applied Genetic Algorithms in MATLAB to optimize T-network parameters for RF coils. <em>(Published Patent Application)</em></p>
+                <a href="https://github.com/vg-vishal" target="_blank" class="btn small-btn"><i class="fab fa-github"></i> View Repo</a>
             </div>
-            <div class="card glass" data-aos="fade-up" data-aos-delay="300">
-                <h3>8-bit ALU Design & Implementation</h3>
-                <p>Developed and simulated an 8-bit Arithmetic Logic Unit. Leveraged FPGA architecture and Xilinx Vivado to demonstrate strong foundational capabilities in RTL and digital logic design.</p>
+            <div class="card neon-card" data-aos="fade-up">
+                <h3>8-bit ALU Design</h3>
+                <p>Developed and simulated an 8-bit Arithmetic Logic Unit using FPGA architecture and Xilinx Vivado.</p>
+                <a href="https://github.com/vg-vishal" target="_blank" class="btn small-btn"><i class="fab fa-github"></i> View Repo</a>
             </div>
-            <div class="card glass" data-aos="fade-up" data-aos-delay="400">
+            <div class="card neon-card" data-aos="fade-up">
                 <h3>AI Air Pencil</h3>
-                <p>Engineered a computer vision and machine learning application capable of tracking spatial coordinates and translating physical hand movements into real-time digital drawings.</p>
+                <p>Computer vision application tracking spatial coordinates to translate physical hand movements into digital drawings.</p>
+                <a href="https://github.com/vg-vishal" target="_blank" class="btn small-btn"><i class="fab fa-github"></i> View Repo</a>
             </div>
         </div>
     </section>
 
-    <section id="research" class="container">
-        <h2 class="section-title" data-aos="fade-right">Research & Patents</h2>
-        <div class="card glass" data-aos="zoom-in" data-aos-delay="200">
-            <h3>Published Patent Applications</h3>
-            <ul>
-                <li><strong>System for Genetic Algorithm Optimized T-Network Impedance Matching of RF Coils with Complex Biological Loads</strong> (App No. 202641013851)</li>
-                <li><strong>AI-Based Hand Gesture Recognition System Using IMU Sensor and KNN Algorithm</strong> (App No. 202641018713)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="certifications" class="container">
-        <h2 class="section-title" data-aos="fade-right">Certifications</h2>
-        <div class="grid-2">
-            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Design of CPS with ARM Processor using Embedded C</h3>
-                <p>L&T EduTech via Coursera • Apr 8, 2026</p>
-                <a href="https://coursera.org/verify/ELEEEAF899GR9" target="_blank" class="btn text-btn">View Credential &rarr;</a>
-            </div>
-            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Introduction to Semiconductor Devices 1</h3>
-                <p>KAIST via Coursera • Oct 27, 2025</p>
-                <a href="https://coursera.org/verify/YHBE1HBQQ7F6" target="_blank" class="btn text-btn">View Credential &rarr;</a>
-            </div>
-            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="300">
-                <h3>Fundamentals of Semiconductor Characterization</h3>
-                <p>Arizona State Univ. via Coursera • Oct 27, 2025</p>
-                <a href="https://coursera.org/verify/Y349BT1KXJBU" target="_blank" class="btn text-btn">View Credential &rarr;</a>
-            </div>
-            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="400">
-                <h3>6G Evolution: Blockchain, Semantic Communications & Radar</h3>
-                <p>Univ. of Glasgow via Coursera • Nov 13, 2025</p>
-                <a href="https://coursera.org/verify/SA92O5PYROYE" target="_blank" class="btn text-btn">View Credential &rarr;</a>
+    <!-- NEW DEDICATED RESUME SECTION -->
+    <section id="resume-sec" class="container">
+        <h2 class="section-title" data-aos="fade-right">Documentation</h2>
+        <div class="resume-box terminal-box" data-aos="zoom-in">
+            <h2>Access Full Resume</h2>
+            <p>View my complete academic history, certifications (KAIST, ASU, Glasgow), and technical experience.</p>
+            <div class="resume-buttons">
+                <a href="resume.pdf" class="btn primary" target="_blank"><i class="fas fa-eye"></i> View Resume</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Vishal Gedela. Built for the future.</p>
+        <p>&copy; 2026 Vishal Gedela. System Online.</p>
         <div class="socials">
-            <a href="mailto:vishalgedela713@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="mailto:vishalgedela713@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <!-- INSERT YOUR LINKEDIN LINK BELOW -->
+            <a href="https://www.linkedin.com/in/vishal-gedela-29b6b3328/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vg-vishal" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
 
-    <!-- AOS Script Initialization -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        AOS.init({
-            once: true, // whether animation should happen only once - while scrolling down
-            offset: 100 // offset (in px) from the original trigger point
+        AOS.init({ once: true, offset: 100 });
+        
+        // Intense Interactive Neural Net Configuration
+        particlesJS('particles-js', {
+          "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00f0ff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5, "random": false },
+            "size": { "value": 3, "random": true },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#bc13fe",
+              "opacity": 0.6,
+              "width": 1.5
+            },
+            "move": {
+              "enable": true,
+              "speed": 4,
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": { "enable": true, "mode": "grab" },
+              "onclick": { "enable": true, "mode": "push" },
+              "resize": true
+            },
+            "modes": {
+              "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+              "push": { "particles_nb": 4 }
+            }
+          },
+          "retina_detect": true
         });
     </script>
 </body>
