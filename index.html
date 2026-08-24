@@ -6,9 +6,11 @@
     <title>Vishal Gedela | ECE Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Animate On Scroll (AOS) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav data-aos="fade-down" data-aos-duration="1000">
         <div class="logo">VG.</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -21,29 +23,34 @@
     </nav>
 
     <header id="home">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
             <h1>Vishal Gedela</h1>
-            <h2>ECE Student | Core Electronics & Digital Systems | AI/ML Enthusiast</h2>
+            <h2 class="typewriter">ECE Student | VLSI | Embedded Systems | AI/ML</h2>
             <p>B.Tech ECE (2024–2028) @ SRM Institute of Science and Technology | 9.25 CGPA</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary">View My Work</a>
-               <a href="resume.pdf" class="btn secondary" target="_blank">Download Resume</a>
+                <a href="resume.pdf" class="btn secondary" target="_blank">Download Resume</a>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
     <section id="about" class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>I am an Electronics and Communication Engineering student at SRM Institute of Science and Technology (Class of 2028) maintaining a 9.25 CGPA. My passion lies at the intersection of hardware and intelligent systems, with a core focus on VLSI, Embedded Systems, and Artificial Intelligence.</p>
-        <br>
-        <p>I thrive on building end-to-end solutions that bridge the physical and digital worlds. Whether I am optimizing RF impedance matching networks using evolutionary algorithms or developing real-time AI gesture recognition systems, I approach engineering with a strict focus on performance, efficiency, and real-world applicability.</p>
+        <h2 class="section-title" data-aos="fade-right">About Me</h2>
+        <div data-aos="fade-up" data-aos-delay="200">
+            <p>I am an Electronics and Communication Engineering student at SRM Institute of Science and Technology (Class of 2028) maintaining a 9.25 CGPA. My passion lies at the intersection of hardware and intelligent systems, with a core focus on VLSI, Embedded Systems, and Artificial Intelligence.</p>
+            <br>
+            <p>I thrive on building end-to-end solutions that bridge the physical and digital worlds. Whether I am optimizing RF impedance matching networks using evolutionary algorithms or developing real-time AI gesture recognition systems, I approach engineering with a strict focus on performance, efficiency, and real-world applicability.</p>
+        </div>
     </section>
 
     <section id="experience" class="container">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="card">
+        <h2 class="section-title" data-aos="fade-right">Work Experience</h2>
+        <div class="card glass" data-aos="fade-up" data-aos-delay="200">
             <h3>AI Intern</h3>
-            <p style="color: var(--accent); margin-bottom: 15px;">Waveva Technologies | Jun 2026 – Aug 2026 | Remote</p>
+            <p class="highlight-text">Waveva Technologies | Jun 2026 – Aug 2026 | Remote</p>
             <ul>
                 <li>Engineered data pipelines by performing cleaning, preprocessing, and exploratory data analysis (EDA) on real-world Kaggle datasets.</li>
                 <li>Leveraged Python, Pandas, NumPy, and Matplotlib for advanced data manipulation and visualization.</li>
@@ -54,21 +61,21 @@
     </section>
 
     <section id="skills" class="container">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title" data-aos="fade-right">Technical Skills</h2>
         <div class="grid-3">
-            <div class="card">
+            <div class="card glass" data-aos="flip-left" data-aos-delay="100">
                 <h3>Digital & VLSI</h3>
                 <p>Digital Logic Design, RTL Design, FPGA</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="flip-left" data-aos-delay="200">
                 <h3>Programming</h3>
                 <p>C, Python, MATLAB, Verilog, VHDL</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="flip-left" data-aos-delay="300">
                 <h3>Hardware & Tools</h3>
                 <p>Xilinx Vivado, Arduino IDE, Multisim, LTspice, MATLAB, GitHub, VS Code</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="flip-left" data-aos-delay="400">
                 <h3>AI, ML & Frameworks</h3>
                 <p>NumPy, Scikit-learn, Pandas, Matplotlib, KNN Algorithm</p>
             </div>
@@ -76,21 +83,21 @@
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
         <div class="grid-2">
-            <div class="card">
+            <div class="card glass" data-aos="fade-up" data-aos-delay="100">
                 <h3>AI-Based Hand Gesture Recognition</h3>
                 <p>Built a real-time gesture classification system utilizing IMU sensors (MPU6050) and the K-Nearest Neighbors (KNN) algorithm. Managed end-to-end data collection, preprocessing, and model training specifically for human-computer interaction applications.</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="fade-up" data-aos-delay="200">
                 <h3>GA-Optimized RF Impedance Matching</h3>
                 <p>Simulated and analyzed RF coil behavior under complex biological loading conditions using MATLAB. Applied Genetic Algorithms to optimize T-network parameters, successfully reducing reflection losses and improving power transfer efficiency.</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="fade-up" data-aos-delay="300">
                 <h3>8-bit ALU Design & Implementation</h3>
                 <p>Developed and simulated an 8-bit Arithmetic Logic Unit. Leveraged FPGA architecture and Xilinx Vivado to demonstrate strong foundational capabilities in RTL and digital logic design.</p>
             </div>
-            <div class="card">
+            <div class="card glass" data-aos="fade-up" data-aos-delay="400">
                 <h3>AI Air Pencil</h3>
                 <p>Engineered a computer vision and machine learning application capable of tracking spatial coordinates and translating physical hand movements into real-time digital drawings.</p>
             </div>
@@ -98,8 +105,8 @@
     </section>
 
     <section id="research" class="container">
-        <h2 class="section-title">Research & Patents</h2>
-        <div class="card">
+        <h2 class="section-title" data-aos="fade-right">Research & Patents</h2>
+        <div class="card glass" data-aos="zoom-in" data-aos-delay="200">
             <h3>Published Patent Applications</h3>
             <ul>
                 <li><strong>System for Genetic Algorithm Optimized T-Network Impedance Matching of RF Coils with Complex Biological Loads</strong> (App No. 202641013851)</li>
@@ -109,24 +116,24 @@
     </section>
 
     <section id="certifications" class="container">
-        <h2 class="section-title">Certifications</h2>
+        <h2 class="section-title" data-aos="fade-right">Certifications</h2>
         <div class="grid-2">
-            <div class="card cert-card">
+            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Design of CPS with ARM Processor using Embedded C</h3>
                 <p>L&T EduTech via Coursera • Apr 8, 2026</p>
                 <a href="https://coursera.org/verify/ELEEEAF899GR9" target="_blank" class="btn text-btn">View Credential &rarr;</a>
             </div>
-            <div class="card cert-card">
+            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>Introduction to Semiconductor Devices 1</h3>
                 <p>KAIST via Coursera • Oct 27, 2025</p>
                 <a href="https://coursera.org/verify/YHBE1HBQQ7F6" target="_blank" class="btn text-btn">View Credential &rarr;</a>
             </div>
-            <div class="card cert-card">
+            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Fundamentals of Semiconductor Characterization</h3>
                 <p>Arizona State Univ. via Coursera • Oct 27, 2025</p>
                 <a href="https://coursera.org/verify/Y349BT1KXJBU" target="_blank" class="btn text-btn">View Credential &rarr;</a>
             </div>
-            <div class="card cert-card">
+            <div class="card glass cert-card" data-aos="fade-up" data-aos-delay="400">
                 <h3>6G Evolution: Blockchain, Semantic Communications & Radar</h3>
                 <p>Univ. of Glasgow via Coursera • Nov 13, 2025</p>
                 <a href="https://coursera.org/verify/SA92O5PYROYE" target="_blank" class="btn text-btn">View Credential &rarr;</a>
@@ -142,5 +149,14 @@
             <a href="#"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+
+    <!-- AOS Script Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100 // offset (in px) from the original trigger point
+        });
+    </script>
 </body>
 </html>
