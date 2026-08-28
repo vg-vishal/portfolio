@@ -1,10 +1,10 @@
 /* =========================================================
-   VISHAL GEDELA — PORTFOLIO INTERACTIONS
+   VISHAL GEDELA — PORTFOLIO ANIMATIONS
    ========================================================= */
 
 
 /* =========================================================
-   1. MOBILE NAVIGATION
+   MOBILE NAVIGATION
    ========================================================= */
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -14,39 +14,31 @@ if (menuToggle && navLinks) {
 
     menuToggle.addEventListener("click", () => {
 
-        navLinks.classList.toggle("open");
+        navLinks.classList.toggle("active");
 
         const icon = menuToggle.querySelector("i");
 
-        if (navLinks.classList.contains("open")) {
-            if (icon) {
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
-            }
+        if (navLinks.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
         } else {
-            if (icon) {
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-            }
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
         }
 
     });
 
 
-    /* Close menu after clicking a link */
-
     document.querySelectorAll(".nav-links a").forEach(link => {
 
         link.addEventListener("click", () => {
 
-            navLinks.classList.remove("open");
+            navLinks.classList.remove("active");
 
             const icon = menuToggle.querySelector("i");
 
-            if (icon) {
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-            }
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
 
         });
 
@@ -56,88 +48,17 @@ if (menuToggle && navLinks) {
 
 
 /* =========================================================
-   2. NAVBAR SCROLL EFFECT
+   CURSOR GLOW
    ========================================================= */
 
-const navbar = document.querySelector("nav");
-
-window.addEventListener("scroll", () => {
-
-    if (!navbar) return;
-
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-
-});
-
-
-/* =========================================================
-   3. ACTIVE NAVIGATION LINK
-   ========================================================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-function updateActiveNav() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 180;
-
-        const sectionHeight =
-            section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            currentSection = section.getAttribute("id");
-        }
-
-    });
-
-    navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        const target =
-            link.getAttribute("href");
-
-        if (target === `#${currentSection}`) {
-            link.classList.add("active");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", updateActiveNav);
-
-updateActiveNav();
-
-
-/* =========================================================
-   4. MOUSE GLOW EFFECT
-   ========================================================= */
-
-const cursorGlow =
-    document.querySelector(".cursor-glow");
+const cursorGlow = document.querySelector(".cursor-glow");
 
 if (cursorGlow) {
 
-    document.addEventListener("mousemove", event => {
+    document.addEventListener("mousemove", (e) => {
 
-        cursorGlow.style.left =
-            `${event.clientX}px`;
-
-        cursorGlow.style.top =
-            `${event.clientY}px`;
+        cursorGlow.style.left = e.clientX + "px";
+        cursorGlow.style.top = e.clientY + "px";
 
     });
 
@@ -145,44 +66,44 @@ if (cursorGlow) {
 
 
 /* =========================================================
-   5. CREATE FLOATING PARTICLES
+   FLOATING PARTICLES
    ========================================================= */
 
-const particlesContainer =
-    document.querySelector("#particles");
+const particlesContainer = document.getElementById("particles");
 
 if (particlesContainer) {
 
-    const particleCount =
-        window.innerWidth < 700 ? 25 : 55;
+    const particleCount = 45;
 
     for (let i = 0; i < particleCount; i++) {
 
-        const particle =
-            document.createElement("span");
+        const particle = document.createElement("span");
 
-        particle.classList.add("particle");
+        particle.style.position = "absolute";
+        particle.style.width = Math.random() * 3 + 1 + "px";
+        particle.style.height = particle.style.width;
+
+        particle.style.borderRadius = "50%";
+
+        particle.style.background = "#00eaff";
+
+        particle.style.boxShadow =
+            "0 0 8px rgba(0,234,255,.8)";
 
         particle.style.left =
-            `${Math.random() * 100}%`;
+            Math.random() * 100 + "%";
 
-        particle.style.animationDuration =
-            `${8 + Math.random() * 15}s`;
-
-        particle.style.animationDelay =
-            `${Math.random() * 12}s`;
+        particle.style.top =
+            Math.random() * 100 + "%";
 
         particle.style.opacity =
-            `${0.2 + Math.random() * 0.6}`;
+            Math.random() * .7 + .2;
 
-        const size =
-            1 + Math.random() * 2;
+        particle.style.animation =
+            `particleFloat ${5 + Math.random() * 10}s linear infinite`;
 
-        particle.style.width =
-            `${size}px`;
-
-        particle.style.height =
-            `${size}px`;
+        particle.style.animationDelay =
+            Math.random() * 5 + "s";
 
         particlesContainer.appendChild(particle);
 
@@ -192,98 +113,153 @@ if (particlesContainer) {
 
 
 /* =========================================================
-   6. SCROLL REVEAL ANIMATION
+   PARTICLE ANIMATION STYLE
    ========================================================= */
 
-const revealElements =
-    document.querySelectorAll(
-        ".card, .section-title, .about-copy, .system-panel"
-    );
+const particleStyle = document.createElement("style");
 
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
+particleStyle.innerHTML = `
 
-            entries.forEach(entry => {
+@keyframes particleFloat {
 
-                if (entry.isIntersecting) {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
 
-                    entry.target.style.opacity = "1";
+    20% {
+        opacity: 1;
+    }
 
-                    entry.target.style.transform =
-                        "translateY(0)";
+    50% {
+        transform: translate(
+            ${Math.random() * 100 - 50}px,
+            -100px
+        );
+    }
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+    80% {
+        opacity: .5;
+    }
 
-                }
+    100% {
+        transform: translate(
+            ${Math.random() * 150 - 75}px,
+            -220px
+        );
+        opacity: 0;
+    }
 
-            });
+}
 
-        },
-        {
-            threshold: 0.12
-        }
-    );
+`;
 
+document.head.appendChild(particleStyle);
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
+const revealElements = document.querySelectorAll(
+    ".card, .section-title, .hero-stats"
+);
 
 revealElements.forEach(element => {
 
     element.style.opacity = "0";
-
-    element.style.transform =
-        "translateY(35px)";
-
+    element.style.transform = "translateY(35px)";
     element.style.transition =
-        "opacity 0.8s ease, transform 0.8s cubic-bezier(.16,1,.3,1)";
-
-    revealObserver.observe(element);
+        "opacity .8s ease, transform .8s ease";
 
 });
 
 
-/* =========================================================
-   7. STAGGER CARD ANIMATIONS
-   ========================================================= */
+const revealObserver = new IntersectionObserver(
+    (entries) => {
 
-document.querySelectorAll(".grid-2, .grid-3")
-    .forEach(grid => {
+        entries.forEach(entry => {
 
-        const cards =
-            grid.querySelectorAll(".card");
+            if (entry.isIntersecting) {
 
-        cards.forEach((card, index) => {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform =
+                    "translateY(0)";
 
-            card.style.transitionDelay =
-                `${index * 0.08}s`;
+                revealObserver.unobserve(entry.target);
+
+            }
 
         });
 
-    });
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
 
 
 /* =========================================================
-   8. 3D CARD TILT
+   ANIMATED SKILL BARS
    ========================================================= */
 
-const tiltCards =
-    document.querySelectorAll(".project-card");
+const skillBars = document.querySelectorAll(
+    ".skill-line span"
+);
 
-tiltCards.forEach(card => {
 
-    card.addEventListener("mousemove", event => {
+const skillObserver = new IntersectionObserver(
+    (entries) => {
 
-        if (window.innerWidth < 800) return;
+        entries.forEach(entry => {
 
-        const rect =
-            card.getBoundingClientRect();
+            if (entry.isIntersecting) {
+
+                const width =
+                    entry.target.getAttribute("data-width");
+
+                entry.target.style.width = width;
+
+                skillObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.5
+    }
+);
+
+
+skillBars.forEach(bar => {
+    skillObserver.observe(bar);
+});
+
+
+/* =========================================================
+   3D PROJECT CARD EFFECT
+   ========================================================= */
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
 
         const x =
-            event.clientX - rect.left;
+            e.clientX - rect.left;
 
         const y =
-            event.clientY - rect.top;
+            e.clientY - rect.top;
 
         const centerX =
             rect.width / 2;
@@ -295,13 +271,13 @@ tiltCards.forEach(card => {
             ((y - centerY) / centerY) * -4;
 
         const rotateY =
-            ((x - centerX) / centerX) * 5;
+            ((x - centerX) / centerX) * 4;
 
         card.style.transform =
-            `perspective(1000px)
+            `perspective(900px)
              rotateX(${rotateX}deg)
              rotateY(${rotateY}deg)
-             translateY(-9px)`;
+             translateY(-8px)`;
 
     });
 
@@ -309,7 +285,7 @@ tiltCards.forEach(card => {
     card.addEventListener("mouseleave", () => {
 
         card.style.transform =
-            "";
+            "perspective(900px) rotateX(0) rotateY(0)";
 
     });
 
@@ -317,37 +293,121 @@ tiltCards.forEach(card => {
 
 
 /* =========================================================
-   9. MAGNETIC BUTTON EFFECT
+   ACTIVE NAVIGATION
    ========================================================= */
 
-const magneticButtons =
-    document.querySelectorAll(".btn");
+const sections = document.querySelectorAll("section, header");
+const navItems = document.querySelectorAll(".nav-links a");
 
-magneticButtons.forEach(button => {
 
-    button.addEventListener("mousemove", event => {
+const navObserver = new IntersectionObserver(
+    (entries) => {
 
-        if (window.innerWidth < 800) return;
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                navItems.forEach(link => {
+                    link.classList.remove("active");
+                });
+
+                const activeLink =
+                    document.querySelector(
+                        `.nav-links a[href="#${entry.target.id}"]`
+                    );
+
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.35
+    }
+);
+
+
+sections.forEach(section => {
+
+    if (section.id) {
+        navObserver.observe(section);
+    }
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+   ========================================================= */
+
+const navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+
+        navbar.style.background =
+            "rgba(3,7,15,.88)";
+
+        navbar.style.boxShadow =
+            "0 10px 35px rgba(0,0,0,.25)";
+
+    } else {
+
+        navbar.style.background =
+            "rgba(5,8,16,.65)";
+
+        navbar.style.boxShadow = "none";
+
+    }
+
+});
+
+
+/* =========================================================
+   SMOOTH BUTTON RIPPLE
+   ========================================================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("click", function(e) {
+
+        const ripple = document.createElement("span");
 
         const rect =
-            button.getBoundingClientRect();
+            this.getBoundingClientRect();
 
-        const x =
-            event.clientX - rect.left - rect.width / 2;
+        const size =
+            Math.max(rect.width, rect.height);
 
-        const y =
-            event.clientY - rect.top - rect.height / 2;
+        ripple.style.position = "absolute";
+        ripple.style.width = size + "px";
+        ripple.style.height = size + "px";
+        ripple.style.borderRadius = "50%";
+        ripple.style.background =
+            "rgba(255,255,255,.25)";
+        ripple.style.left =
+            e.clientX - rect.left - size / 2 + "px";
+        ripple.style.top =
+            e.clientY - rect.top - size / 2 + "px";
 
-        button.style.transform =
-            `translate(${x * 0.12}px,
-                       ${y * 0.12}px)`;
+        ripple.style.transform = "scale(0)";
+        ripple.style.pointerEvents = "none";
 
-    });
+        ripple.style.animation =
+            "rippleEffect .6s ease-out";
 
+        this.appendChild(ripple);
 
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "";
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
 
     });
 
@@ -355,7 +415,34 @@ magneticButtons.forEach(button => {
 
 
 /* =========================================================
-   10. TYPING TEXT EFFECT
+   RIPPLE ANIMATION
+   ========================================================= */
+
+const rippleStyle = document.createElement("style");
+
+rippleStyle.innerHTML = `
+
+@keyframes rippleEffect {
+
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}
+
+.nav-links a.active {
+    color: #00eaff;
+    text-shadow: 0 0 12px rgba(0,234,255,.7);
+}
+
+`;
+
+document.head.appendChild(rippleStyle);
+
+
+/* =========================================================
+   TYPING CURSOR EFFECT
    ========================================================= */
 
 const typewriter =
@@ -363,344 +450,34 @@ const typewriter =
 
 if (typewriter) {
 
-    const texts = [
-
-        "ECE • VLSI & Digital Design • Embedded Systems",
-
-        "Digital Design • FPGA • Verilog • VHDL",
-
-        "Embedded Systems • C • Arduino",
-
-        "RF • Research • MATLAB",
-
-        "AI/ML • Python • Computer Vision"
-
-    ];
-
-    let textIndex = 0;
-
-    let charIndex = 0;
-
-    let deleting = false;
-
-
-    function typeEffect() {
-
-        const currentText =
-            texts[textIndex];
-
-        if (!deleting) {
-
-            typewriter.textContent =
-                currentText.substring(
-                    0,
-                    charIndex + 1
-                );
-
-            charIndex++;
-
-            if (charIndex === currentText.length) {
-
-                deleting = true;
-
-                setTimeout(
-                    typeEffect,
-                    1800
-                );
-
-                return;
-
-            }
-
-        } else {
-
-            typewriter.textContent =
-                currentText.substring(
-                    0,
-                    charIndex - 1
-                );
-
-            charIndex--;
-
-            if (charIndex === 0) {
-
-                deleting = false;
-
-                textIndex =
-                    (textIndex + 1) % texts.length;
-
-            }
-
-        }
-
-        setTimeout(
-            typeEffect,
-            deleting ? 35 : 65
-        );
-
-    }
-
-
-    typewriter.style.animation = "none";
+    const text = typewriter.textContent.trim();
 
     typewriter.textContent = "";
 
-    setTimeout(typeEffect, 800);
+    let index = 0;
+
+    function typeText() {
+
+        if (index < text.length) {
+
+            typewriter.textContent +=
+                text.charAt(index);
+
+            index++;
+
+            setTimeout(typeText, 45);
+
+        }
+
+    }
+
+    setTimeout(typeText, 800);
 
 }
 
 
 /* =========================================================
-   11. NUMBER COUNTER
-   ========================================================= */
-
-const counters =
-    document.querySelectorAll("[data-count]");
-
-const counterObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting)
-                    return;
-
-                const counter =
-                    entry.target;
-
-                const target =
-                    parseFloat(
-                        counter.dataset.count
-                    );
-
-                const suffix =
-                    counter.dataset.suffix || "";
-
-                let current = 0;
-
-                const duration = 1200;
-
-                const start =
-                    performance.now();
-
-
-                function updateCounter(time) {
-
-                    const progress =
-                        Math.min(
-                            (time - start) /
-                            duration,
-                            1
-                        );
-
-                    const eased =
-                        1 -
-                        Math.pow(
-                            1 - progress,
-                            3
-                        );
-
-                    current =
-                        target * eased;
-
-                    counter.textContent =
-                        Number.isInteger(target)
-                            ? Math.floor(current) + suffix
-                            : current.toFixed(2) + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(
-                            updateCounter
-                        );
-                    }
-
-                }
-
-                requestAnimationFrame(
-                    updateCounter
-                );
-
-                counterObserver.unobserve(counter);
-
-            });
-
-        },
-        {
-            threshold: 0.8
-        }
-    );
-
-
-counters.forEach(counter => {
-
-    counter.textContent = "0";
-
-    counterObserver.observe(counter);
-
-});
-
-
-/* =========================================================
-   12. SKILL BAR ANIMATION
-   ========================================================= */
-
-const skillBars =
-    document.querySelectorAll(
-        ".skill-line span"
-    );
-
-const skillObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting)
-                    return;
-
-                const bar =
-                    entry.target;
-
-                const width =
-                    bar.dataset.width ||
-                    "80%";
-
-                bar.style.width =
-                    width;
-
-                skillObserver.unobserve(bar);
-
-            });
-
-        },
-        {
-            threshold: 0.5
-        }
-    );
-
-
-skillBars.forEach(bar => {
-
-    bar.style.width = "0%";
-
-    skillObserver.observe(bar);
-
-});
-
-
-/* =========================================================
-   13. SMOOTH ANCHOR SCROLL
-   ========================================================= */
-
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach(anchor => {
-
-    anchor.addEventListener("click", event => {
-
-        const targetId =
-            anchor.getAttribute("href");
-
-        if (
-            !targetId ||
-            targetId === "#"
-        ) return;
-
-        const target =
-            document.querySelector(targetId);
-
-        if (!target) return;
-
-        event.preventDefault();
-
-        const navOffset =
-            70;
-
-        const position =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            navOffset;
-
-        window.scrollTo({
-
-            top: position,
-
-            behavior: "smooth"
-
-        });
-
-    });
-
-});
-
-
-/* =========================================================
-   14. HERO PARALLAX
-   ========================================================= */
-
-const hero =
-    document.querySelector("header");
-
-const heroContent =
-    document.querySelector(".hero-content");
-
-if (hero && heroContent) {
-
-    window.addEventListener(
-        "scroll",
-        () => {
-
-            if (window.innerWidth < 800)
-                return;
-
-            const scroll =
-                window.scrollY;
-
-            if (scroll > window.innerHeight)
-                return;
-
-            heroContent.style.transform =
-                `translateY(${scroll * 0.18}px)`;
-
-            heroContent.style.opacity =
-                Math.max(
-                    0,
-                    1 - scroll / 650
-                );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   15. RANDOM GLITCH EFFECT
-   ========================================================= */
-
-const logo =
-    document.querySelector(".logo");
-
-if (logo) {
-
-    setInterval(() => {
-
-        logo.classList.add("glitch");
-
-        setTimeout(() => {
-
-            logo.classList.remove("glitch");
-
-        }, 180);
-
-    }, 5000);
-
-}
-
-
-/* =========================================================
-   16. PAGE LOADED
+   PAGE LOADED
    ========================================================= */
 
 window.addEventListener("load", () => {
@@ -708,13 +485,7 @@ window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 
     console.log(
-        "%c VISHAL GEDELA ",
-        "color:#00d2ff;font-size:20px;font-weight:bold;"
-    );
-
-    console.log(
-        "%c ECE | VLSI | Embedded | RF | AI/ML ",
-        "color:#94a3b8;font-size:12px;"
+        "⚡ Vishal Gedela Portfolio Loaded"
     );
 
 });
