@@ -1,123 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vishal Gedela | ECE • VLSI • Embedded • RF • AI/ML</title>
+    <title>Vishal Gedela | ECE • VLSI • AI/ML</title>
 
     <meta name="description"
-        content="Vishal Gedela — Electronics and Communication Engineering student specializing in VLSI, Digital Design, Embedded Systems, RF and AI/ML.">
+          content="Vishal Gedela — ECE student focused on VLSI, Digital Design, Embedded Systems, RF Engineering and AI/ML.">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Animated background -->
-    <div id="particles"></div>
-    <div class="cursor-glow"></div>
+<!-- ================= LOADER ================= -->
 
+<div id="loader">
+    <div class="loader-chip">
+        <div class="loader-logo">&lt;/VG&gt;</div>
+        <div class="loader-line"></div>
+        <p>INITIALIZING PORTFOLIO...</p>
+    </div>
+</div>
 
-    <!-- ================= NAVIGATION ================= -->
+<!-- ================= BACKGROUND ================= -->
 
-    <nav>
+<canvas id="circuitCanvas"></canvas>
+<div class="cursor-glow"></div>
 
-        <div class="logo">
-            VG
-        </div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-        <button class="menu-toggle" aria-label="Open navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+<!-- ================= NAVBAR ================= -->
 
-        <ul class="nav-links">
+<header class="navbar">
 
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <a href="#home" class="logo">
+        <span>&lt;</span>VG<span>/&gt;</span>
+    </a>
 
-        </ul>
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
 
+    <nav id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#certifications" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
+    <button class="theme-btn" id="themeBtn">☼</button>
 
-    <!-- ================= HERO ================= -->
+</header>
 
-    <header id="home">
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero section">
+
+    <div class="hero-grid">
 
         <div class="hero-content">
 
-            <p class="highlight-text">
-                ELECTRONICS & COMMUNICATION ENGINEERING
+            <div class="terminal-tag">
+                <span class="terminal-dot"></span>
+                SYSTEM ONLINE
+            </div>
+
+            <p class="hero-small">
+                Hello, I'm
             </p>
 
             <h1>
-                Vishal Gedela
+                Vishal <span>Gedela</span>
             </h1>
 
-            <h2 class="typewriter">
-                VLSI • Digital Design • Embedded Systems • RF • AI/ML
+            <h2>
+                <span id="typewriter"></span><span class="cursor">|</span>
             </h2>
 
-            <p>
-                Engineering student passionate about building
-                hardware-driven solutions through
-                <strong>
-                    VLSI, Digital Design, Embedded Systems,
-                    RF Research and AI/ML.
-                </strong>
+            <p class="hero-description">
+                B.Tech ECE student @ SRM Institute of Science and Technology
+                building systems at the intersection of
+                <strong>VLSI, Embedded Systems, RF Engineering & AI/ML.</strong>
             </p>
-
 
             <div class="hero-buttons">
 
-                <a href="#projects" class="btn primary">
-                    <i class="fa-solid fa-code"></i>
+                <a href="#projects" class="btn primary magnetic">
                     Explore Projects
                 </a>
 
-                <a href="#resume" class="btn secondary">
-                    <i class="fa-solid fa-file-lines"></i>
+                <a href="resume.pdf" target="_blank" class="btn secondary magnetic">
                     View Resume
                 </a>
 
             </div>
 
-
             <div class="hero-stats">
 
-                <div class="stat glass">
+                <div>
                     <strong>9.25</strong>
                     <span>CGPA</span>
                 </div>
 
-                <div class="stat glass">
+                <div>
+                    <strong>4+</strong>
+                    <span>Projects</span>
+                </div>
+
+                <div>
                     <strong>2</strong>
-                    <span>Patents</span>
+                    <span>Patent Applications</span>
                 </div>
 
-                <div class="stat glass">
-                    <strong>4</strong>
-                    <span>Certifications</span>
-                </div>
-
-                <div class="stat glass">
-                    <strong>5</strong>
-                    <span>Core Areas</span>
+                <div>
+                    <strong>97.17%</strong>
+                    <span>AI Accuracy</span>
                 </div>
 
             </div>
@@ -125,928 +135,972 @@
         </div>
 
 
-        <div class="scroll-indicator">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
+        <!-- ENGINEERING PANEL -->
 
-    </header>
+        <div class="engineering-panel">
 
+            <div class="panel-top">
+                <span>ENGINEERING STATUS</span>
+                <span class="live-dot">● LIVE</span>
+            </div>
 
-    <!-- ================= ABOUT ================= -->
+            <div class="chip-visual">
 
-    <section id="about">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                About Me
-            </h2>
-
-
-            <div class="grid-2">
-
-
-                <div class="card glass">
-
-                    <h3>
-                        Electronics Engineer in the Making
-                    </h3>
-
-                    <p>
-                        I am a B.Tech Electronics and Communication
-                        Engineering student at SRM Institute of Science
-                        and Technology with a strong interest in
-                        <strong>
-                            VLSI, Digital Design, Embedded Systems
-                            and RF Engineering.
-                        </strong>
-                    </p>
-
-                    <p>
-                        Alongside core electronics, I explore
-                        <strong>
-                            Artificial Intelligence and Machine Learning
-                        </strong>
-                        to develop intelligent hardware-software systems.
-                    </p>
-
-                    <p>
-                        My goal is to work on challenging engineering
-                        problems involving digital hardware,
-                        FPGA-based systems, embedded platforms,
-                        RF circuits and intelligent systems.
-                    </p>
-
+                <div class="chip-core">
+                    <span>VG</span>
+                    <small>ECE</small>
                 </div>
 
+                <div class="trace trace1"></div>
+                <div class="trace trace2"></div>
+                <div class="trace trace3"></div>
+                <div class="trace trace4"></div>
 
-                <div class="card glass">
+                <div class="pin pin1"></div>
+                <div class="pin pin2"></div>
+                <div class="pin pin3"></div>
+                <div class="pin pin4"></div>
 
-                    <h3>
-                        My Engineering Focus
-                    </h3>
+            </div>
 
-                    <ul>
+            <div class="panel-data">
 
-                        <li>
-                            <strong>01 — VLSI & Digital Design</strong><br>
-                            Verilog, VHDL, FPGA and digital systems
-                        </li>
+                <div>
+                    <span>FOCUS</span>
+                    <strong>VLSI / RTL</strong>
+                </div>
 
-                        <li>
-                            <strong>02 — Embedded Systems</strong><br>
-                            C, Arduino, sensors and embedded development
-                        </li>
+                <div>
+                    <span>HARDWARE</span>
+                    <strong>FPGA</strong>
+                </div>
 
-                        <li>
-                            <strong>03 — RF Engineering</strong><br>
-                            Impedance matching and RF simulation
-                        </li>
+                <div>
+                    <span>SOFTWARE</span>
+                    <strong>Python / C</strong>
+                </div>
 
-                        <li>
-                            <strong>04 — Research</strong><br>
-                            Circuit optimization and engineering research
-                        </li>
-
-                        <li>
-                            <strong>05 — AI / ML</strong><br>
-                            Python, KNN and computer vision
-                        </li>
-
-                    </ul>
-
+                <div>
+                    <span>AI</span>
+                    <strong>ML / CV</strong>
                 </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= EXPERIENCE ================= -->
+<!-- ================= ABOUT ================= -->
 
-    <section id="experience">
+<section id="about" class="section">
 
-        <div class="container">
+    <div class="section-heading">
+        <span>01</span>
+        <h2>About Me</h2>
+    </div>
 
-            <h2 class="section-title">
-                Work Experience
-            </h2>
+    <div class="about-grid">
+
+        <div class="glass-card about-card">
+
+            <div class="terminal-header">
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>vishal@portfolio:~$</p>
+            </div>
+
+            <p>
+                I am an Electronics and Communication Engineering student
+                passionate about designing intelligent hardware and
+                exploring the connection between hardware and AI.
+            </p>
+
+            <p>
+                My current interests include RTL design, FPGA development,
+                digital systems, embedded systems, RF engineering and
+                machine learning.
+            </p>
+
+            <p>
+                I enjoy turning engineering concepts into practical
+                projects using Verilog, Python, MATLAB, Arduino and
+                Xilinx Vivado.
+            </p>
+
+        </div>
 
 
-            <div class="card glass">
+        <div class="about-cards">
 
-                <p class="highlight-text">
-                    AI INTERN • 2026
-                </p>
+            <div class="mini-card">
+                <span>🎓</span>
+                <h3>ECE</h3>
+                <p>SRM Institute of Science and Technology</p>
+            </div>
 
-                <h3>
-                    Waveva Technologies
-                </h3>
+            <div class="mini-card">
+                <span>⚡</span>
+                <h3>VLSI</h3>
+                <p>RTL • FPGA • Digital Design</p>
+            </div>
+
+            <div class="mini-card">
+                <span>🤖</span>
+                <h3>AI/ML</h3>
+                <p>Computer Vision • KNN</p>
+            </div>
+
+            <div class="mini-card">
+                <span>📡</span>
+                <h3>RF</h3>
+                <p>Impedance Matching</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience" class="section">
+
+    <div class="section-heading">
+        <span>02</span>
+        <h2>Experience</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card glass-card">
+
+                <div class="timeline-date">
+                    JUN 2026 — AUG 2026
+                </div>
+
+                <h3>AI Intern</h3>
+
+                <h4>Waveva Technologies</h4>
 
                 <p>
-                    AI Intern working on practical Artificial
-                    Intelligence and Machine Learning applications.
+                    Worked on AI/ML concepts and practical development,
+                    gaining experience in Python, machine learning
+                    workflows and applied AI systems.
                 </p>
 
-                <ul>
-
-                    <li>
-                        Worked with Python-based AI/ML workflows.
-                    </li>
-
-                    <li>
-                        Gained practical exposure to machine
-                        learning development.
-                    </li>
-
-                    <li>
-                        Applied programming and problem-solving
-                        skills to real-world tasks.
-                    </li>
-
-                </ul>
+                <div class="tag-list">
+                    <span>Python</span>
+                    <span>AI/ML</span>
+                    <span>Machine Learning</span>
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= SKILLS ================= -->
+<!-- ================= SKILLS ================= -->
 
-    <section id="skills">
+<section id="skills" class="section">
 
-        <div class="container">
+    <div class="section-heading">
+        <span>03</span>
+        <h2>Technical Skills</h2>
+    </div>
 
-            <h2 class="section-title">
-                Technical Skills
-            </h2>
+    <div class="skills-grid">
+
+        <div class="skill-card glass-card">
+
+            <div class="skill-icon">⚡</div>
+
+            <h3>VLSI & Digital</h3>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>RTL Design</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:85%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>Verilog</span>
+                    <span>82%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:82%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>FPGA / Vivado</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:80%"></i>
+                </div>
+            </div>
+
+        </div>
 
 
-            <div class="grid-3">
+        <div class="skill-card glass-card">
+
+            <div class="skill-icon">💻</div>
+
+            <h3>Programming</h3>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>Python</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:85%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>C</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:75%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>MATLAB</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:80%"></i>
+                </div>
+            </div>
+
+        </div>
 
 
-                <div class="card glass">
+        <div class="skill-card glass-card">
 
-                    <h3>
-                        <i class="fa-solid fa-microchip"></i>
-                        VLSI & Digital
-                    </h3>
+            <div class="skill-icon">🤖</div>
 
-                    <p>
-                        Verilog • VHDL • FPGA • Digital Design
-                    </p>
+            <h3>AI / ML</h3>
 
-                    <div class="skill-line">
-                        <span data-width="90%"></span>
+            <div class="skill">
+                <div class="skill-info">
+                    <span>Machine Learning</span>
+                    <span>78%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:78%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>Computer Vision</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:75%"></i>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-info">
+                    <span>KNN</span>
+                    <span>82%</span>
+                </div>
+                <div class="skill-bar">
+                    <i style="--level:82%"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="skill-card glass-card">
+
+            <div class="skill-icon">🛠️</div>
+
+            <h3>Tools & Hardware</h3>
+
+            <div class="tool-cloud">
+
+                <span>Vivado</span>
+                <span>Arduino</span>
+                <span>Multisim</span>
+                <span>LTSpice</span>
+                <span>GitHub</span>
+                <span>Thinkercad</span>
+                <span>Wokwi</span>
+                <span>NanoVNA</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECT LAB ================= -->
+
+<section id="projects" class="section project-section">
+
+    <div class="section-heading">
+        <span>04</span>
+        <h2>Project Lab</h2>
+    </div>
+
+    <p class="section-intro">
+        Interactive engineering projects — hover, explore and see what
+        each system does.
+    </p>
+
+
+    <div class="project-grid">
+
+
+        <!-- AIR PENCIL -->
+
+        <article class="project-card project-air reveal"
+                 data-project="air-pencil">
+
+            <div class="project-visual">
+
+                <div class="air-title">
+                    AI AIR PENCIL
+                </div>
+
+                <div class="drawing-board">
+
+                    <div class="drawing-path"></div>
+
+                    <div class="finger">
+                        <span>✦</span>
                     </div>
+
+                    <div class="digit">8</div>
 
                 </div>
 
-
-                <div class="card glass">
-
-                    <h3>
-                        <i class="fa-solid fa-code"></i>
-                        Programming
-                    </h3>
-
-                    <p>
-                        C • Python • MATLAB
-                    </p>
-
-                    <div class="skill-line">
-                        <span data-width="85%"></span>
-                    </div>
-
-                </div>
-
-
-                <div class="card glass">
-
-                    <h3>
-                        <i class="fa-solid fa-memory"></i>
-                        Embedded
-                    </h3>
-
-                    <p>
-                        Arduino • Embedded C • Sensors
-                    </p>
-
-                    <div class="skill-line">
-                        <span data-width="88%"></span>
-                    </div>
-
-                </div>
-
-
-                <div class="card glass">
-
-                    <h3>
-                        <i class="fa-solid fa-satellite-dish"></i>
-                        RF
-                    </h3>
-
-                    <p>
-                        RF Simulation • Impedance Matching
-                    </p>
-
-                    <div class="skill-line">
-                        <span data-width="80%"></span>
-                    </div>
-
-                </div>
-
-
-                <div class="card glass">
-
-                    <h3>
-                        <i class="fa-solid fa-brain"></i>
-                        AI / ML
-                    </h3>
-
-                    <p>
-                        Python • KNN • Machine Learning
-                    </p>
-
-                    <div class="skill-line">
-                        <span data-width="78%"></span>
-                    </div>
-
-                </div>
-
-
-                <div class="card glass">
-
-                    <h3>
-                        <i class="fa-solid fa-laptop-code"></i>
-                        Tools
-                    </h3>
-
-                    <p>
-                        Vivado • Multisim • LTspice • GitHub
-                    </p>
-
-                    <div class="skill-line">
-                        <span data-width="87%"></span>
-                    </div>
-
+                <div class="visual-status">
+                    <span class="status-dot"></span>
+                    AIR DRAWING ACTIVE
                 </div>
 
             </div>
 
+            <div class="project-content">
 
-            <div class="card glass" style="margin-top:30px;">
+                <div class="project-number">01</div>
 
-                <h3>
-                    Complete Toolkit
-                </h3>
+                <h3>AI Air Pencil</h3>
 
                 <p>
-                    C • Python • MATLAB • Verilog • VHDL • FPGA •
-                    Vivado • Arduino • Multisim • LTspice •
-                    NanoVNA • GitHub • TensorFlow • Keras •
-                    Scikit-learn • NumPy • Pandas
+                    Draw digits in the air using hand gestures and
+                    recognize them using machine learning.
                 </p>
 
-            </div>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>ML</span>
+                    <span>Computer Vision</span>
+                </div>
 
-        </div>
+                <div class="project-result">
+                    <strong>97.17%</strong>
+                    <span>Recognition Accuracy</span>
+                </div>
 
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Projects
-            </h2>
-
-
-            <div class="grid-2">
-
-
-                <!-- AI AIR PENCIL -->
-
-                <div class="card glass project-card">
-
-                    <p class="highlight-text">
-                        AI • COMPUTER VISION
-                    </p>
-
-                    <h3>
-                        AI Air Pencil
-                    </h3>
-
-                    <p>
-                        A computer-vision based virtual drawing
-                        system that allows users to draw in the air
-                        using finger movement.
-                    </p>
-
-                    <ul>
-
-                        <li>Real-time hand tracking</li>
-                        <li>Finger-based drawing interaction</li>
-                        <li>OpenCV / MediaPipe</li>
-                        <li>Interactive virtual canvas</li>
-
-                    </ul>
+                <div class="project-buttons">
 
                     <a href="https://github.com/vg-vishal/AI-Air-Pencil"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View on GitHub
-                        <i class="fa-brands fa-github"></i>
-
+                       target="_blank"
+                       class="project-btn">
+                        GitHub ↗
                     </a>
+
+                    <button class="project-btn outline"
+                            onclick="openProject('air-pencil')">
+                        View Demo
+                    </button>
 
                 </div>
 
+            </div>
 
-                <!-- HAND GESTURE -->
+        </article>
 
-                <div class="card glass project-card">
 
-                    <p class="highlight-text">
-                        EMBEDDED • AI/ML
-                    </p>
+        <!-- HAND GESTURE -->
 
-                    <h3>
-                        AI-Based Hand Gesture Recognition
-                    </h3>
+        <article class="project-card project-gesture reveal"
+                 data-project="gesture">
 
-                    <p>
-                        An embedded hand gesture recognition system
-                        using an MPU6050 IMU sensor, Arduino Uno
-                        and KNN classification.
-                    </p>
+            <div class="project-visual gesture-visual">
 
-                    <ul>
+                <div class="gesture-header">
+                    HAND GESTURE AI
+                </div>
 
-                        <li>MPU6050 motion sensing</li>
-                        <li>Arduino Uno</li>
-                        <li>KNN classification</li>
-                        <li>Multiple gesture classes</li>
+                <div class="gesture-display">
 
-                    </ul>
+                    <div class="hand-icon">🖐️</div>
+
+                    <div class="gesture-label">
+                        OPEN HAND
+                    </div>
+
+                </div>
+
+                <div class="gesture-model">
+                    MODEL: <strong>KNN</strong>
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">02</div>
+
+                <h3>Hand Gesture Recognition</h3>
+
+                <p>
+                    IMU-based gesture recognition system using MPU6050,
+                    Arduino and KNN classification.
+                </p>
+
+                <div class="project-tags">
+                    <span>Arduino</span>
+                    <span>MPU6050</span>
+                    <span>KNN</span>
+                    <span>Python</span>
+                </div>
+
+                <div class="project-result">
+                    <strong>6</strong>
+                    <span>Recognized Gestures</span>
+                </div>
+
+                <div class="project-buttons">
 
                     <a href="https://github.com/vg-vishal/Hand-Gesture-Recognition-KNN"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View on GitHub
-                        <i class="fa-brands fa-github"></i>
-
+                       target="_blank"
+                       class="project-btn">
+                        GitHub ↗
                     </a>
+
+                    <button class="project-btn outline"
+                            onclick="openProject('gesture')">
+                        View Demo
+                    </button>
 
                 </div>
 
+            </div>
 
-                <!-- RF -->
+        </article>
 
-                <div class="card glass project-card">
 
-                    <p class="highlight-text">
-                        RF • RESEARCH
-                    </p>
+        <!-- RF -->
 
-                    <h3>
-                        Genetic Algorithm Optimized
-                        T-Network Impedance Matching
-                    </h3>
+        <article class="project-card project-rf reveal"
+                 data-project="rf">
 
-                    <p>
-                        RF impedance matching research project
-                        focused on optimizing power transfer between
-                        RF coils and complex biological loads.
-                    </p>
+            <div class="project-visual rf-visual">
 
-                    <ul>
+                <div class="rf-title">
+                    RF IMPEDANCE MATCHING
+                </div>
 
-                        <li>MATLAB simulation</li>
-                        <li>Multisim simulation</li>
-                        <li>T-Network matching circuit</li>
-                        <li>Genetic Algorithm optimization</li>
+                <div class="rf-graph">
 
-                    </ul>
+                    <div class="graph-line"></div>
+
+                    <span class="axis-x">Frequency →</span>
+                    <span class="axis-y">S11</span>
+
+                </div>
+
+                <div class="rf-network">
+
+                    <span>L</span>
+                    <i></i>
+                    <span>C</span>
+                    <i></i>
+                    <span>L</span>
+
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">03</div>
+
+                <h3>GA-Optimized RF Matching</h3>
+
+                <p>
+                    Genetic Algorithm optimized T-network impedance
+                    matching for RF coils with complex biological loads.
+                </p>
+
+                <div class="project-tags">
+                    <span>MATLAB</span>
+                    <span>Multisim</span>
+                    <span>RF</span>
+                    <span>Genetic Algorithm</span>
+                </div>
+
+                <div class="project-result">
+                    <strong>64 MHz</strong>
+                    <span>Simulation Frequency</span>
+                </div>
+
+                <div class="project-buttons">
 
                     <a href="https://github.com/vg-vishal/GA-Optimized-RF-Impedance-Matching"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View on GitHub
-                        <i class="fa-brands fa-github"></i>
-
+                       target="_blank"
+                       class="project-btn">
+                        GitHub ↗
                     </a>
 
-                </div>
-
-
-                <!-- ALU -->
-
-                <div class="card glass project-card">
-
-                    <p class="highlight-text">
-                        VLSI • FPGA
-                    </p>
-
-                    <h3>
-                        8-Bit ALU Soft IP Core
-                    </h3>
-
-                    <p>
-                        FPGA-oriented ALU implementation developed
-                        as a reusable soft IP core using Verilog
-                        and Xilinx Vivado.
-                    </p>
-
-                    <ul>
-
-                        <li>8-bit arithmetic and logic operations</li>
-                        <li>Verilog HDL</li>
-                        <li>Xilinx Vivado</li>
-                        <li>Artix-7 FPGA target</li>
-
-                    </ul>
+                    <button class="project-btn outline"
+                            onclick="openProject('rf')">
+                        View Demo
+                    </button>
 
                 </div>
 
             </div>
+
+        </article>
+
+
+        <!-- ALU -->
+
+        <article class="project-card project-alu reveal"
+                 data-project="alu">
+
+            <div class="project-visual alu-visual">
+
+                <div class="alu-label">
+                    8-BIT DIGITAL SYSTEM
+                </div>
+
+                <div class="binary-row">
+                    <span>A</span>
+                    <strong id="binaryA">01010110</strong>
+                </div>
+
+                <div class="binary-row">
+                    <span>B</span>
+                    <strong id="binaryB">00101101</strong>
+                </div>
+
+                <div class="alu-box">
+                    <span>ALU</span>
+                    <small>8 BIT</small>
+                </div>
+
+                <div class="alu-output">
+                    RESULT
+                    <strong id="binaryResult">10000011</strong>
+                </div>
+
+                <div class="accumulator">
+                    ACCUMULATOR
+                    <span>✓ ACTIVE</span>
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">04</div>
+
+                <h3>8-bit ALU & Accumulator</h3>
+
+                <p>
+                    Custom 8-bit ALU integrated into a sequential
+                    accumulator architecture and implemented as a
+                    Vivado IP core.
+                </p>
+
+                <div class="project-tags">
+                    <span>Verilog</span>
+                    <span>Vivado</span>
+                    <span>FPGA</span>
+                    <span>IP Core</span>
+                </div>
+
+                <div class="project-result">
+                    <strong>8-BIT</strong>
+                    <span>ALU Architecture</span>
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/vg-vishal/8Bit-ALU-Accumulator"
+                       target="_blank"
+                       class="project-btn">
+                        GitHub ↗
+                    </a>
+
+                    <button class="project-btn outline"
+                            onclick="openProject('alu')">
+                        View Demo
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESEARCH ================= -->
+
+<section id="research" class="section">
+
+    <div class="section-heading">
+        <span>05</span>
+        <h2>Research & Patents</h2>
+    </div>
+
+    <div class="research-grid">
+
+        <div class="research-card glass-card">
+
+            <div class="research-icon">📡</div>
+
+            <span class="research-type">PATENT APPLICATION</span>
+
+            <h3>
+                System for Genetic Algorithm Optimized
+                T-Network Impedance Matching of RF Coils
+            </h3>
+
+            <p>
+                Application of optimization algorithms to RF impedance
+                matching with complex biological loads.
+            </p>
+
+            <strong>
+                Application No. 202641013851
+            </strong>
 
         </div>
 
-    </section>
 
+        <div class="research-card glass-card">
 
-    <!-- ================= RESEARCH ================= -->
+            <div class="research-icon">🤖</div>
 
-    <section id="research">
+            <span class="research-type">PATENT APPLICATION</span>
 
-        <div class="container">
+            <h3>
+                AI-Based Hand Gesture Recognition System
+                Using IMU Sensor and KNN
+            </h3>
 
-            <h2 class="section-title">
-                Research & Patents
-            </h2>
+            <p>
+                An IMU-based gesture recognition architecture combining
+                sensor data acquisition and machine learning.
+            </p>
 
-
-            <div class="grid-2">
-
-
-                <div class="card glass">
-
-                    <p class="highlight-text">
-                        PATENT APPLICATION
-                    </p>
-
-                    <h3>
-                        RF Coil Impedance Matching
-                    </h3>
-
-                    <p>
-
-                        <strong>
-                            System and Method for Genetic Algorithm
-                            Optimized T-Network Impedance Matching
-                            of RF Coils with Complex Biological Loads
-                        </strong>
-
-                    </p>
-
-                    <p>
-                        The work focuses on optimizing a T-network
-                        consisting of inductors and a capacitor for
-                        improved RF matching, reflection coefficient
-                        and power-transfer efficiency.
-                    </p>
-
-                    <ul>
-
-                        <li>Genetic Algorithm optimization</li>
-                        <li>S11 analysis</li>
-                        <li>RF efficiency optimization</li>
-                        <li>MRI/NMR and healthcare applications</li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="card glass">
-
-                    <p class="highlight-text">
-                        RESEARCH
-                    </p>
-
-                    <h3>
-                        AI-Based Gesture Recognition
-                    </h3>
-
-                    <p>
-                        Design and implementation of an AI-based
-                        hand gesture recognition system using an
-                        IMU sensor and KNN algorithm.
-                    </p>
-
-                    <ul>
-
-                        <li>Sensor-based feature extraction</li>
-                        <li>KNN machine learning classification</li>
-                        <li>Embedded hardware implementation</li>
-                        <li>Real-time gesture recognition</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-            <div class="card glass" style="margin-top:30px;">
-
-                <h3>
-                    Patent Portfolio
-                </h3>
-
-                <p>
-                    <strong>
-                        2 Published Patent Applications
-                    </strong>
-                </p>
-
-                <p>
-                    My research interests combine RF engineering,
-                    optimization algorithms and practical electronic
-                    systems to solve engineering problems.
-                </p>
-
-            </div>
+            <strong>
+                Application No. 202641018713
+            </strong>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= CERTIFICATIONS ================= -->
+<!-- ================= CERTIFICATIONS ================= -->
 
-    <section id="certifications">
+<section id="certifications" class="section">
 
-        <div class="container">
-
-            <h2 class="section-title">
-                Certifications
-            </h2>
-
-
-            <div class="grid-2">
+    <div class="section-heading">
+        <span>06</span>
+        <h2>Certifications & Achievements</h2>
+    </div>
 
 
-                <!-- CERTIFICATE 1 -->
-
-                <div class="card glass">
-
-                    <p class="highlight-text">
-                        L&T EDUTECH • COURSERA
-                    </p>
-
-                    <h3>
-                        Design of CPS with ARM Processor
-                        using Embedded C
-                    </h3>
-
-                    <p>
-                        Completed April 8, 2026
-                    </p>
-
-                    <a href="https://coursera.org/verify/ELEEAF899GR9"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View Certificate
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
+    <div class="certificate-grid">
 
 
-                <!-- CERTIFICATE 2 -->
+        <a class="certificate-card"
+           href="https://coursera.org/verify/ELEEAF899GR9"
+           target="_blank">
 
-                <div class="card glass">
+            <div class="certificate-icon">⚙️</div>
 
-                    <p class="highlight-text">
-                        UNIVERSITY OF GLASGOW • COURSERA
-                    </p>
-
-                    <h3>
-                        6G Evolution:
-                        Blockchain, Semantic Communications & Radar
-                    </h3>
-
-                    <p>
-                        Completed November 13, 2025
-                    </p>
-
-                    <a href="https://coursera.org/verify/SA92O5PYROYE"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View Certificate
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-
-                <!-- CERTIFICATE 3 -->
-
-                <div class="card glass">
-
-                    <p class="highlight-text">
-                        ARIZONA STATE UNIVERSITY • COURSERA
-                    </p>
-
-                    <h3>
-                        Fundamentals of Semiconductor
-                        Characterization
-                    </h3>
-
-                    <p>
-                        Completed October 27, 2025
-                    </p>
-
-                    <a href="https://coursera.org/verify/Y349BT1KXJBU"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View Certificate
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-
-                <!-- CERTIFICATE 4 -->
-
-                <div class="card glass">
-
-                    <p class="highlight-text">
-                        KAIST • COURSERA
-                    </p>
-
-                    <h3>
-                        Introduction to Semiconductor Devices 1
-                    </h3>
-
-                    <p>
-                        Completed October 27, 2025
-                    </p>
-
-                    <a href="https://coursera.org/verify/YHBE1HBQO7F6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-btn">
-
-                        View Certificate
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
+            <div>
+                <span class="certificate-issuer">COURSERA</span>
+                <h3>Design of CPS with ARM Processor using Embedded C</h3>
+                <p>Embedded Systems</p>
             </div>
+
+            <span class="certificate-arrow">↗</span>
+
+        </a>
+
+
+        <a class="certificate-card"
+           href="https://coursera.org/verify/SA92O5PYROYE"
+           target="_blank">
+
+            <div class="certificate-icon">📡</div>
+
+            <div>
+                <span class="certificate-issuer">COURSERA</span>
+                <h3>6G Evolution: Blockchain, Semantic Communications & Radar</h3>
+                <p>Wireless / Communication</p>
+            </div>
+
+            <span class="certificate-arrow">↗</span>
+
+        </a>
+
+
+        <a class="certificate-card"
+           href="https://coursera.org/verify/Y349BT1KXJBU"
+           target="_blank">
+
+            <div class="certificate-icon">🔬</div>
+
+            <div>
+                <span class="certificate-issuer">COURSERA</span>
+                <h3>Fundamentals of Semiconductor Characterization</h3>
+                <p>Semiconductor Technology</p>
+            </div>
+
+            <span class="certificate-arrow">↗</span>
+
+        </a>
+
+
+        <a class="certificate-card"
+           href="https://coursera.org/verify/YHBE1HBQO7F6"
+           target="_blank">
+
+            <div class="certificate-icon">💎</div>
+
+            <div>
+                <span class="certificate-issuer">COURSERA</span>
+                <h3>Introduction to Semiconductor Devices 1</h3>
+                <p>Semiconductor Devices</p>
+            </div>
+
+            <span class="certificate-arrow">↗</span>
+
+        </a>
+
+
+        <!-- MONGODB -->
+
+        <a class="certificate-card mongodb"
+           href="https://www.credly.com/go/k6W0vpNT"
+           target="_blank">
+
+            <div class="certificate-icon">🍃</div>
+
+            <div>
+                <span class="certificate-issuer">MONGODB</span>
+                <h3>MongoDB Basics for Students</h3>
+                <p>Issued 31 July 2025 • Credly Verified</p>
+            </div>
+
+            <span class="certificate-arrow">↗</span>
+
+        </a>
+
+
+        <!-- NIT ACHIEVEMENT -->
+
+        <div class="certificate-card achievement">
+
+            <div class="certificate-icon">🏆</div>
+
+            <div>
+                <span class="certificate-issuer">ACHIEVEMENT</span>
+                <h3>NIT Trichy CURRENTS Hackathon</h3>
+                <p>
+                    Hackathon / Technical Achievement
+                </p>
+            </div>
+
+            <span class="achievement-badge">
+                CURRENTS
+            </span>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ================= EDUCATION ================= -->
+<!-- ================= GITHUB ================= -->
 
-    <section id="education">
+<section class="section github-section">
 
-        <div class="container">
+    <div class="section-heading">
+        <span>07</span>
+        <h2>Open Source</h2>
+    </div>
 
-            <h2 class="section-title">
-                Education
-            </h2>
+    <div class="github-card glass-card">
 
+        <div class="github-icon">◉</div>
 
-            <div class="card glass">
+        <div>
 
-                <p class="highlight-text">
-                    2024 — 2028
-                </p>
+            <span class="github-label">GITHUB</span>
 
-                <h3>
-                    B.Tech — Electronics & Communication Engineering
-                </h3>
+            <h3>
+                Building • Learning • Sharing
+            </h3>
 
-                <p>
-                    SRM Institute of Science and Technology
-                </p>
-
-                <p>
-                    <strong>
-                        CGPA: 9.25
-                    </strong>
-                </p>
-
-            </div>
+            <p>
+                Explore my projects, experiments and engineering work.
+            </p>
 
         </div>
 
-    </section>
+        <a href="https://github.com/vg-vishal"
+           target="_blank"
+           class="btn primary magnetic">
+            Visit GitHub ↗
+        </a>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= RESUME ================= -->
+<!-- ================= CONTACT ================= -->
 
-    <section id="resume">
+<section id="contact" class="section contact-section">
 
-        <div class="container">
+    <div class="section-heading">
+        <span>08</span>
+        <h2>Let's Connect</h2>
+    </div>
 
-            <h2 class="section-title">
-                Resume & Documentation
-            </h2>
+    <div class="contact-content">
 
-
-            <div class="card glass">
-
-                <h3>
-                    My Resume
-                </h3>
-
-                <p>
-                    View my complete academic, technical,
-                    research and project profile.
-                </p>
-
-
-                <a href="resume.pdf"
-                    target="_blank"
-                    class="btn primary">
-
-                    <i class="fa-solid fa-eye"></i>
-                    View Resume
-
-                </a>
-
-
-                <a href="resume.pdf"
-                    download
-                    class="btn secondary">
-
-                    <i class="fa-solid fa-download"></i>
-                    Download Resume
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                Let's Connect
-            </h2>
-
-
-            <div class="card glass">
-
-                <h3>
-                    Interested in Engineering & Innovation?
-                </h3>
-
-                <p>
-                    I'm open to opportunities, collaborations,
-                    research discussions and interesting
-                    engineering projects.
-                </p>
-
-
-                <div class="hero-buttons">
-
-
-                    <!-- EMAIL -->
-
-                    <a href="mailto:vishalgedela713@gmail.com"
-                        class="btn primary">
-
-                        <i class="fa-solid fa-envelope"></i>
-                        Email Me
-
-                    </a>
-
-
-                    <!-- GITHUB -->
-
-                    <a href="https://github.com/vg-vishal"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary">
-
-                        <i class="fa-brands fa-github"></i>
-                        GitHub
-
-                    </a>
-
-
-                    <!-- LINKEDIN -->
-
-                    <a href="https://www.linkedin.com/in/vishal-gedela-29b6b3328/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary">
-
-                        <i class="fa-brands fa-linkedin"></i>
-                        LinkedIn
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
+        <h2>
+            Have an idea?
+            <span>Let's build it.</span>
+        </h2>
 
         <p>
-            © 2026 Vishal Gedela
+            I'm always interested in engineering projects,
+            research opportunities, internships and collaborations.
         </p>
 
-        <p>
-            ECE • VLSI • Embedded Systems • RF • AI/ML
-        </p>
-
-
-        <div class="socials">
-
-
-            <a href="https://github.com/vg-vishal"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub">
-
-                <i class="fa-brands fa-github"></i>
-
-            </a>
-
-
-            <a href="https://www.linkedin.com/in/vishal-gedela-29b6b3328/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn">
-
-                <i class="fa-brands fa-linkedin"></i>
-
-            </a>
-
+        <div class="contact-buttons">
 
             <a href="mailto:vishalgedela713@gmail.com"
-                aria-label="Email">
+               class="btn primary magnetic">
+                Email Me
+            </a>
 
-                <i class="fa-solid fa-envelope"></i>
+            <a href="https://www.linkedin.com/in/vishal-gedela-29b6b3328/"
+               target="_blank"
+               class="btn secondary magnetic">
+                LinkedIn ↗
+            </a>
 
+            <a href="https://github.com/vg-vishal"
+               target="_blank"
+               class="btn secondary magnetic">
+                GitHub ↗
             </a>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        &lt;VG/&gt;
+    </div>
+
+    <p>
+        Designed & built by Vishal Gedela
+    </p>
+
+    <p class="footer-code">
+        while(alive) { learn(); build(); repeat(); }
+    </p>
+
+</footer>
+
+
+<!-- ================= PROJECT MODAL ================= -->
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-overlay" onclick="closeProject()"></div>
+
+    <div class="modal-box">
+
+        <button class="modal-close"
+                onclick="closeProject()">
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
